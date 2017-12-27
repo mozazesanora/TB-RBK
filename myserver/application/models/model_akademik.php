@@ -34,32 +34,10 @@ class model_akademik extends CI_Model
 		}
 	}
 
-	function delete($paramDB ,$paramTabel,$paramKey, $where)
+	function delete($paramDB , $paramTabel , $paramKey , $paramValue)
 	{
-		$dbload=$this->load->database($paramDB,TRUE);
-		$res=$dbload->delete($paramTabel,array($paramKey=>$where));
-		if ($res) {
-			return $res;
-		} else {
-			return false;
-		}	
-	}
-
-	function select($paramKey,$paramTabel,$paramDB)
-	{
-		$dbload=$this->load->database($paramDB,TRUE);
-		$res=$dbload->get($paramTabel,array($paramKey=>$where));
-		if ($res) {
-			return $res;
-		} else {
-			return false;
-		}
-	}
-
-	function ($paramKey,$paramTabel,$paramDB,$paramWhere)
-	{
-		$dbload=$this->load->database($paramDB,TRUE);
-		$res=$dbload->update($paramTabel,array($paramKey=>$paramWhere));
+		$dbload=$this->load->database($paramDB , TRUE);
+		$res=$dbload->delete($paramTabel,array($paramKey=>$paramValue));
 		if ($res) {
 			return $res;
 		} else {
@@ -67,6 +45,27 @@ class model_akademik extends CI_Model
 		}
 		
 	}
+
+	function getWhere($paramDB , $paramTabel , $paramKey , $paramValue)
+	{
+		$dbload=$this->load->database($paramDB,TRUE);
+		$res=$dbload->get_where($paramTabel , array($paramKey=>$paramValue));
+		if ($res) {
+			return $res;
+		} else {
+			return false;
+		}
+		
+	}
+
+	function update($paramDB , $paramTabel , $paramData ,$paramValue)
+	{
+		$dbload=$this->load->database($paramDB , TRUE);
+		$res=$this->$dbload->update($paramTabel , $paramData , $paramValue);
+
+	}
+
+
 }
 
 ?>
