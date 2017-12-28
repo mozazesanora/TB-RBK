@@ -17,7 +17,6 @@ class matkul extends REST_Controller
 		$this->response($dataAkademik,200);
 	}
 
-
 	function index_post()
 	{
 		$value = array(
@@ -33,15 +32,34 @@ class matkul extends REST_Controller
 		
 	}
 
-	function index_delete(){
-		$valueWhere=$this->delete('nidn');
-		$deleting=$this->model_akademik->delete('default','dosen','nidn',$valueWhere);
-		if ($deleting) {
-			$this->response(array('status'=>'seccess'),201);
+	function index_delete()
+	{
+		$db=$this->load->database('default',TRUE);
+		$key=$this->delete('idDataMatkul');
+		$db->where('idDataMatkul',$key);
+		$deleted=$db->delete('matakuliah');
+		if ($deleted) {
+			$this->response(array('status'=>'success'), 201);
 		} else {
-			$this->response(array('status'=>'fail'),201);
+			$this->response(array('status'=>'fail'),502);
 		}
-		
+	}
+
+	function index_put()
+	{
+		$db=$this->load->database('default',TRUE);
+		$key=$this->put('idDataMatkul');
+		$data = array('idDataMatkul' =>$this->put('idDataMatkul') , 
+						'idMatkul' =>$this->put('idMatkul'),
+						'namaMatkul'=>$this->put('namaMatkul')
+		);
+		$db->where('idDataMatkul',$key);
+		$updated=$db->update('matakuliah',$data);
+		if ($updated) {
+			$this->response(array('status'=>'success'),201);
+		} else {
+			$this->response(array('status'=>'fail'),501);
+		}
 	}
 }
 ?>
