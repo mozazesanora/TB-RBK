@@ -257,10 +257,13 @@ desired effect
         <li class="header">MENU</li>
         <!-- Optionally, you can add icons to the links -->
         <li class="{menu_dashboard}">
-          <a href="#"><i class="fa fa-tachometer"></i> <span>Dashboard Admin</span></a>
+          <a href="<?php echo base_url(); ?>home"><i class="fa fa-tachometer"></i> <span>Dashboard Admin</span></a>
         </li>
         <li class="{menu_dosen}">
-          <a href="#"><i class="fa fa-folder"></i> <span>Kelola Dosen</span></a>
+          <a href="<?php echo base_url(); ?>dosen"><i class="fa fa-folder"></i> <span>Kelola Dosen</span></a>
+        </li>
+        <li class="{menu_matakuliah}">
+          <a href="<?php echo base_url(); ?>matakuliah"><i class="fa fa-list"></i> <span>Kelola Mata Kuliah</span></a>
         </li>
         <li class="{menu_mahasiswa}">
           <a href="#"><i class="fa fa-graduation-cap"></i> <span>Mahasiswa</span>
@@ -271,6 +274,7 @@ desired effect
           <ul class="treeview-menu">
             <li class="{menu_nilai}"><i class=""></i><a href="#"><i class="fa fa-sort-alpha-asc"><span> Nilai</span></i></a></li>
             <li class="{menu_wali}"><a href="#"><i class="fa fa-address-book-o"><span> Data Wali</span></i></a></li>
+            <li class="{menu_mhs}"><a href="<?php echo base_url(); ?>mahasiswa"><i class="fa fa-book"><span> Data Mahasiswa</span></i></a></li>
           </ul>
         </li>
       </ul>

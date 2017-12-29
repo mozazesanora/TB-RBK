@@ -1,4 +1,3 @@
-<?php ; ?>
   <div class="content">
           <!-- Horizontal Form -->
           <div class="box box-info">
@@ -7,13 +6,13 @@
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form action="<?php echo base_url('index.php/cdosen/edit') ?>" method="post" class="form-horizontal">
+            <form action="<?php echo base_url() ?>dosen/update/" method="post" class="form-horizontal">
               <div class="box-body">
                <div class="form-group">
                   <label for="inputEmail3" class="col-sm-2 control-label">id</label>
 
                   <div class="col-sm-10">
-                    <input type="text" class="form-control" name="idDataDosen" placeholder="" value="<?php echo $dosendata[0]->idDataDosen; ?>" >
+                    <input type="text" class="form-control" name="idDataDosen" placeholder="" value="<?php echo $dosen[0]->idDataDosen; ?>" >
                   </div>
                 </div>
 
@@ -21,7 +20,7 @@
                   <label for="inputEmail3" class="col-sm-2 control-label">NIDN</label>
 
                   <div class="col-sm-10">
-                    <input type="text" class="form-control" name="nidn" placeholder="" value="<?php echo $dosendata[0]->nidn; ?>">
+                    <input type="text" class="form-control" name="nidn" placeholder="" value="<?php echo $dosen[0]->nidn; ?>">
                   
                   </div>
                 </div>
@@ -30,7 +29,7 @@
                   <label for="inputPassword3" class="col-sm-2 control-label">Nama Dosen</label>
 
                   <div class="col-sm-10">
-                    <input type="text" class="form-control" name="namaDosen" placeholder="" value="<?php echo $dosendata[0]->namaDosen; ?>">
+                    <input type="text" class="form-control" name="namaDosen" placeholder="" value="<?php echo $dosen[0]->namaDosen; ?>">
                   </div>
                 </div>
                 

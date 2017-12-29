@@ -10,10 +10,10 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Tambah data Dosen</h3>
+              <h3 class="box-title">Tambah data Matakuliah</h3>
             </div>
 
-           <form action="<?php echo base_url('index.php/cmatakuliah/create') ?>" method="post" class="form-horizontal">
+           <form action="<?php echo base_url('matakuliah/create') ?>" method="post" class="form-horizontal">
               <div class="box-body">
             
 
@@ -46,7 +46,7 @@
               </div>
              
               <div class="box-header">
-              <h3 class="box-title">Data Dosen</h3>
+              <h3 class="box-title">Data Matakuliah</h3>
             </div>
             </form>  
             <!-- /.box-header -->
@@ -71,9 +71,9 @@
             <td><?php echo $key->idDataMatkul ?></td>
           <td><?php echo $key->idMatkul ?></td>
           <td><?php echo $key->namaMatkul; ?></td>
-          <td><a href="<?php echo base_url('index.php/cmatakuliah/edit/').$key->idDataMatkul; ?>" class="btn btn-primary">Update</a></td>
+          <td><a href="<?php echo base_url('matakuliah/edit/').$key->idDataMatkul; ?>" class="btn btn-primary">Update</a></td>
 
-         <td> <a href="<?php echo base_url('index.php/cmatakuliah/delete/').$key->idDataMatkul; ?>" class="btn btn-danger">Delete</a>
+         <td> <a href="<?php echo base_url('matakuliah/delete/').$key->idDataMatkul; ?>" class="btn btn-danger">Delete</a>
 
 
           </td> 

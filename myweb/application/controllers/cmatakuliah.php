@@ -18,7 +18,7 @@ class cmatakuliah extends CI_Controller
         $data=array(
 					'page_header' => "Data Mata Kuliah",
 					'page_desc' => "Daftar Mata Kuliah",
-					'menu_Matkul' => 'active',
+					'menu_matakuliah' => 'active',
 					'page_content'=>$this->load->view('Matakuliah/form',$matkuldata,TRUE),	
 		);
 		$this->parser->parse('starter',$data);
@@ -42,7 +42,7 @@ class cmatakuliah extends CI_Controller
             {
                $this->session->set_flashdata('hasil','Insert Data Gagal');
             }
-            redirect('index.php/cmatakuliah');
+            redirect('matakuliah');
         }else{
             $data['dosendata'] = json_decode($this->curl->simple_get($this->API.'/matkul'));
          
@@ -73,7 +73,7 @@ function edit(){
             {
                $this->session->set_flashdata('hasil','Update Data Gagal');
             }
-            redirect('index.php/cmatakuliah');
+            redirect('matakuliah');
         }else{
           	$params = array('idDataMatkul'=>  $this->uri->segment(3));
             $data['matkuldata'] = json_decode($this->curl->simple_get($this->API.'/matkul',$params));
@@ -90,7 +90,7 @@ function edit(){
     // delete data mahasiswa
     function delete($idDataMatkul){
         if(empty($idDataMatkul)){
-            redirect('cmatakuliah');
+            redirect('matakuliah');
         }else{
             $delete =  $this->curl->simple_delete($this->API.'/matkul', array('idDataMatkul'=>$idDataMatkul), array(CURLOPT_BUFFERSIZE => 10)); 
             if($delete)
@@ -100,7 +100,7 @@ function edit(){
             {
                $this->session->set_flashdata('hasil','Delete Data Gagal');
             }
-            redirect('index.php/cmatakuliah');
+            redirect('matakuliah');
 
         }
     }

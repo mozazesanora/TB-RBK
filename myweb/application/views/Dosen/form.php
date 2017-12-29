@@ -55,24 +55,24 @@
                 <table id="example1" class="table table-bordered table-striped">
              <thead>
             <tr>
-                <th width="30%">NIDN</th>
-                <th width="50%">NAMA</th>
-                <th width="30%">ACTION</th>
-
-
-                
+                <th width="10%">ID</th>
+                <th width="20%">NIDN</th>
+                <th width="40%">NAMA</th>
+                <th width="20%">ACTION</th>
             </tr>
         </thead>
         <tbody>
            <?php foreach ($dosendata as $key) {
            ?>
-           <tr>
+
+          <tr>
+          <td><?php echo $key->idDataDosen; ?></td>
           <td><?php echo $key->nidn ?></td>
           <td><?php echo $key->namaDosen; ?></td>
-          <td><a href="<?php echo base_url('index.php/cdosen/edit/').$key->idDataDosen; ?>" class="btn btn-primary">Update</a>
+          <td><a href="<?php echo base_url('dosen/edit/').$key->idDataDosen; ?>" class="btn btn-primary">Update</a>
 
 
-          <a href="<?php echo base_url('index.php/cdosen/delete/').$key->idDataDosen; ?>" class="btn btn-danger">Delete</a>
+          <a href="<?php echo base_url('dosen/delete/').$key->idDataDosen; ?>" class="btn btn-danger" onClick="myFunction()">Delete</a>
 
 
           </td>
@@ -95,6 +95,11 @@
     </section>
     <!-- /.content -->
   </div>
+  <script type="text/javascript">
+    function myFunction() {
+      alert("Apakah Anda Yakin ingin menghapus?");
+    }
+  </script>
   <!-- /.content-wrapper -->
 
 

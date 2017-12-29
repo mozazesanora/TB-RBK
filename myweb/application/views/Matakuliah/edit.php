@@ -7,7 +7,7 @@
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form action="<?php echo base_url('index.php/cmatakuliah/edit') ?>" method="post" class="form-horizontal">
+            <form action="<?php echo base_url('matakuliah/update/') ?>" method="post" class="form-horizontal">
               <div class="box-body">
                <div class="form-group">
                   <label for="inputEmail3" class="col-sm-2 control-label">id</label>

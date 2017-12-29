@@ -52,3 +52,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'welcome';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
+
+/* home */
+$route['home']='welcome';
+/* Route Dosen*/
+$route['dosen']='cdosen';
+$route['dosen/post']='cdosen/create';
+$route['dosen/delete/(:any)']='cdosen/delete/$1';
+$route['dosen/update']='cdosen/edit';
+$route['dosen/edit/(:any)']='cdosen/edit/$1';
+/*route Mahasiswa */
+$route['matakuliah']='cmatakuliah';
+$route['matakuliah/post']='cmatakuliah/create';
+$route['matakuliah/update']='cmatakuliah/edit';
+$route['matakuliah/delete/(:any)']='cmatakuliah/delete/$1';
+$route['matakuliah/edit/(:any)']='cmatakuliah/edit/$1';
