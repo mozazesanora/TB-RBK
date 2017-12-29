@@ -9,6 +9,9 @@ class cdosen extends CI_Controller
 	{
 		parent::__construct();
 		$this->API="http://localhost/myserver/index.php";
+        if (!$this->session->userdata('username')) {
+                redirect('login','refresh');
+        }
 	}
 
 	public function index()
